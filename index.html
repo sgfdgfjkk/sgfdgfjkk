@@ -3,46 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products</title>
+    <title>Imperium Services - Professional Business Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Our Products</h1>
+     Header 
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>Imperium Services</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="product-grid">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Product 1">
-            <h2>Product 1</h2>
-            <p class="price">$19.99</p>
-            <p class="stock in-stock">In Stock</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+     Hero Section 
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Professional Business Solutions</h1>
+                <p class="hero-subtitle">Empowering your business with comprehensive services and strategic solutions for sustainable growth and success.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=400&width=600" alt="Professional Business Team">
+            </div>
         </div>
+    </section>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Product 2">
-            <h2>Product 2</h2>
-            <p class="price">$29.99</p>
-            <p class="stock in-stock">In Stock</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+     Services Section 
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Strategic Consulting</h3>
+                    <p class="service-description">Expert guidance to help your business navigate challenges and identify growth opportunities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Digital Solutions</h3>
+                    <p class="service-description">Modern technology solutions to streamline operations and enhance productivity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Team Development</h3>
+                    <p class="service-description">Professional training and development programs to enhance team performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Financial Planning</h3>
+                    <p class="service-description">Comprehensive financial strategies to optimize resources and maximize profitability.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Product 3">
-            <h2>Product 3</h2>
-            <p class="price">$39.99</p>
-            <p class="stock out-of-stock">Out of Stock</p>
-            <a href="#" class="buy-btn">Buy Now</a>
+     About Section 
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Imperium Services</h2>
+                    <p class="about-description">
+                        With years of experience in delivering exceptional business solutions, Imperium Services stands as your trusted partner in achieving sustainable growth and operational excellence.
+                    </p>
+                    <p class="about-description">
+                        Our team of dedicated professionals brings together diverse expertise to provide comprehensive services that address the unique challenges facing modern businesses.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3 class="stat-number">500+</h3>
+                            <p class="stat-label">Clients Served</p>
+                        </div>
+                        <div class="stat">
+                            <h3 class="stat-number">10+</h3>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3 class="stat-number">98%</h3>
+                            <p class="stat-label">Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=400&width=500" alt="About Imperium Services">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Product 4">
-            <h2>Product 4</h2>
-            <p class="price">$49.99</p>
-            <p class="stock in-stock">In Stock</p>
-            <a href="#" class="buy-btn">Buy Now</a>
-        </div>
-    </main>
-</body>
-</html>
+     Contact Section 
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to transform your business? Let's discuss your needs.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Business District<br>Professional Plaza, Suite 456<br>City, State 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>
