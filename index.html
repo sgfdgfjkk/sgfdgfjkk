@@ -8,16 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-   Pink Banner 
+  <!-- Pink Banner -->
   <div class="top-banner">
-      <span class="banner-text">Need help? Join our Discord!</span>
+      <span class="banner-text">Need help? Join our Discord server!</span>
       <button class="banner-close" onclick="closeBanner()">&times;</button>
   </div>
 
-   Navigation 
+  <!-- Navigation -->
   <nav class="navbar">
       <div class="nav-container">
-           Logo 
+          <!-- Logo -->
           <div class="logo" onclick="goHome()">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                   <path d="M20 4L32 12L20 20L8 12L20 4Z" fill="#e879f9"/>
@@ -26,7 +26,7 @@
               </svg>
           </div>
 
-           Navigation Links 
+          <!-- Navigation Links -->
           <div class="nav-links">
               <a href="#" class="nav-link active" onclick="showHome()">Home</a>
               <a href="#" class="nav-link" onclick="showProductsPlaceholder()">Products</a>
@@ -34,7 +34,7 @@
               <a href="#" class="nav-link" onclick="showStatus()">Status</a>
           </div>
 
-           Right Side Actions 
+          <!-- Right Side Actions -->
           <div class="nav-actions">
               <button class="affiliates-btn" onclick="openAffiliates()">Affiliates</button>
               <button class="login-btn" onclick="openLoginPlaceholder()">Login</button>
@@ -49,9 +49,9 @@
       </div>
   </nav>
 
-   Main Content 
+  <!-- Main Content -->
   <main class="main-content">
-       Action Buttons 
+      <!-- Action Buttons -->
       <div class="action-buttons">
           <button class="download-now-btn" onclick="downloadCheat()">
               <span>Download Now</span>
@@ -69,12 +69,12 @@
           </button>
       </div>
 
-       Elevate Badge 
+      <!-- Elevate Badge -->
       <div class="elevate-badge">
           <span>Elevate Your Experience ✨</span>
       </div>
 
-       Store Section (Visual only, no interaction) 
+      <!-- Store Section (Visual only, no interaction) -->
       <section class="store-section" id="products">
           <h1 class="store-title">Store</h1>
           <p class="store-subtitle">
@@ -82,10 +82,10 @@
               everything you need.
           </p>
 
-           Products Grid (Static display) 
+          <!-- Products Grid (Static display) -->
           <div class="products-grid">
-               Vector Product 
-              <div class="product-card">
+              <!-- Killem Product -->
+              <div class="product-card" onclick="downloadCheat()">
                   <div class="best-seller-badge">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                           <circle cx="12" cy="12" r="3"/>
@@ -93,87 +93,23 @@
                       </svg>
                       Best Seller
                   </div>
-                  <div class="product-image vector-bg">
-                      <div class="product-logo vector-logo">
-                          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M12 2L2 12L12 22L22 12L12 2Z"/>
-                              <path d="M12 6L6 12L12 18L18 12L12 6Z"/>
-                          </svg>
+                  <div class="product-image killem-bg">
+                      <div class="product-logo killem-logo">
+                          <span>K</span>
                       </div>
-                      <div class="product-title-overlay">VECTOR</div>
+                      <div class="product-title-overlay">KILLEM</div>
                       <div class="product-badges">
                           <span class="badge external">External</span>
                           <span class="badge roblox">Roblox</span>
                       </div>
                   </div>
                   <div class="product-info">
-                      <h3 class="product-name">Vector</h3>
+                      <h3 class="product-name">Killem</h3>
                       <div class="product-status in-stock">In Stock</div>
                       <div class="product-pricing">
                           <span class="price-label">Price</span>
-                          <span class="price-range">£0.99 - £9.99</span>
-                          <span class="price-original">£12.99</span>
-                      </div>
-                  </div>
-                  <button class="product-arrow" onclick="downloadCheat()">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 18l6-6-6-6"/>
-                      </svg>
-                  </button>
-              </div>
-
-               Fartsaken Product 
-              <div class="product-card">
-                  <div class="product-image fartsaken-bg">
-                      <div class="product-logo fartsaken-logo">
-                          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M12 2L2 12L12 22L22 12L12 2Z"/>
-                              <path d="M12 6L6 12L12 18L18 12L12 6Z"/>
-                          </svg>
-                      </div>
-                      <div class="product-title-overlay">FARTSAKEN</div>
-                      <div class="product-badges">
-                          <span class="badge external">External</span>
-                          <span class="badge roblox">Roblox</span>
-                      </div>
-                  </div>
-                  <div class="product-info">
-                      <h3 class="product-name">Fartsaken</h3>
-                      <div class="product-status in-stock">3 Products</div>
-                      <div class="product-pricing">
-                          <span class="price-label">Price</span>
-                          <span class="price-range">£1.20 - £8.49</span>
-                      </div>
-                  </div>
-                  <button class="product-arrow" onclick="downloadCheat()">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 18l6-6-6-6"/>
-                      </svg>
-                  </button>
-              </div>
-
-               Shadow Product 
-              <div class="product-card">
-                  <div class="product-image shadow-bg">
-                      <div class="product-logo shadow-logo">
-                          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M12 2L2 12L12 22L22 12L12 2Z"/>
-                              <path d="M12 6L6 12L12 18L18 12L12 6Z"/>
-                          </svg>
-                      </div>
-                      <div class="product-title-overlay">SHADOW</div>
-                      <div class="product-badges">
-                          <span class="badge external">External</span>
-                          <span class="badge roblox">Roblox</span>
-                      </div>
-                  </div>
-                  <div class="product-info">
-                      <h3 class="product-name">Shadow</h3>
-                      <div class="product-status in-stock">In Stock</div>
-                      <div class="product-pricing">
-                          <span class="price-label">Price</span>
-                          <span class="price-range">£1.29</span>
-                          <span class="price-original">£8.99</span>
+                          <span class="price-range">£4.99</span>
+                          <span class="price-original">£9.99</span>
                       </div>
                   </div>
                   <button class="product-arrow" onclick="downloadCheat()">
@@ -186,7 +122,7 @@
       </section>
   </main>
 
-   Status Modal 
+  <!-- Status Modal -->
   <div id="statusModal" class="modal">
       <div class="modal-content status-modal">
           <span class="close" onclick="closeStatusModal()">&times;</span>
@@ -202,7 +138,7 @@
               <div class="status-item">
                   <div class="status-indicator online"></div>
                   <div class="status-info">
-                      <h3>Vector Cheat</h3>
+                      <h3>Killem Cheat</h3>
                       <p>Undetected</p>
                   </div>
               </div>
