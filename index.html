@@ -8,16 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Pink Banner -->
+     Pink Banner 
     <div class="top-banner">
-        Need help? Join our Discord server!
+        <span class="banner-text">Need help? Join our Discord server!</span>
+        <button class="banner-close" onclick="closeBanner()">&times;</button>
     </div>
 
-    <!-- Navigation -->
+     Navigation 
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Logo -->
-            <div class="logo">
+             Logo 
+            <div class="logo" onclick="goHome()">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path d="M20 4L32 12L20 20L8 12L20 4Z" fill="#e879f9"/>
                     <path d="M8 16L20 24L32 16L20 24L8 16Z" fill="#c084fc"/>
@@ -25,15 +26,15 @@
                 </svg>
             </div>
 
-            <!-- Navigation Links -->
+             Navigation Links 
             <div class="nav-links">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#products" class="nav-link">Products</a>
-                <a href="#" class="nav-link">Feedback</a>
-                <a href="#" class="nav-link">Status</a>
+                <a href="#" class="nav-link active" onclick="showHome()">Home</a>
+                <a href="#products" class="nav-link" onclick="showProducts()">Products</a>
+                <a href="#" class="nav-link" onclick="showFeedback()">Feedback</a>
+                <a href="#" class="nav-link" onclick="showStatus()">Status</a>
             </div>
 
-            <!-- Right Side Actions -->
+             Right Side Actions 
             <div class="nav-actions">
                 <button class="affiliates-btn" onclick="openAffiliates()">Affiliates</button>
                 <button class="login-btn" onclick="openLogin()">Login</button>
@@ -43,14 +44,15 @@
                         <circle cx="20" cy="21" r="1"/>
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                     </svg>
+                    <span class="cart-count" id="cartCount">0</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
+     Main Content 
     <main class="main-content">
-        <!-- Action Buttons -->
+         Action Buttons 
         <div class="action-buttons">
             <button class="shop-now-btn" onclick="scrollToProducts()">
                 <span>Shop Now</span>
@@ -68,12 +70,12 @@
             </button>
         </div>
 
-        <!-- Elevate Badge -->
+         Elevate Badge 
         <div class="elevate-badge">
             <span>Elevate Your Experience ✨</span>
         </div>
 
-        <!-- Store Section -->
+         Store Section 
         <section class="store-section" id="products">
             <h1 class="store-title">Store</h1>
             <p class="store-subtitle">
@@ -81,10 +83,10 @@
                 everything you need.
             </p>
 
-            <!-- Products Grid -->
+             Products Grid 
             <div class="products-grid">
-                <!-- Killem Product -->
-                <div class="product-card" onclick="buyProduct()">
+                 Killem Product 
+                <div class="product-card" onclick="viewProduct()">
                     <div class="best-seller-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="3"/>
@@ -93,6 +95,12 @@
                         Best Seller
                     </div>
                     <div class="product-image killem-bg">
+                         Roblox Logo 
+                        <div class="roblox-logo">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="white">
+                                <path d="M5.5 1L18.5 5L18.5 23L5.5 19L5.5 1Z"/>
+                            </svg>
+                        </div>
                         <div class="product-logo killem-logo">
                             <span>K</span>
                         </div>
@@ -111,7 +119,7 @@
                             <span class="price-original">£9.99</span>
                         </div>
                     </div>
-                    <button class="product-arrow" onclick="buyProduct(event)">
+                    <button class="product-arrow" onclick="addToCart(event)">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 18l6-6-6-6"/>
                         </svg>
@@ -121,7 +129,7 @@
         </section>
     </main>
 
-    <!-- Purchase Modal -->
+     Purchase Modal 
     <div id="purchaseModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -129,82 +137,254 @@
             <div class="product-details">
                 <div class="modal-product-image">
                     <div class="modal-killem-bg">
+                        <div class="modal-roblox-logo">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                                <path d="M5.5 1L18.5 5L18.5 23L5.5 19L5.5 1Z"/>
+                            </svg>
+                        </div>
                         <span class="modal-logo">K</span>
                     </div>
                 </div>
                 <div class="product-features">
                     <h3>Features:</h3>
                     <ul>
-                        <li>✓ Aimbot</li>
+                        <li>✓ Advanced Aimbot</li>
                         <li>✓ ESP/Wallhack</li>
                         <li>✓ Speed Hack</li>
                         <li>✓ Jump Power</li>
                         <li>✓ Fly Hack</li>
                         <li>✓ No Clip</li>
                         <li>✓ Auto Farm</li>
-                        <li>✓ Undetected</li>
+                        <li>✓ 100% Undetected</li>
                     </ul>
                 </div>
             </div>
-            <div class="purchase-form">
+            
+             Checkout Steps 
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Details</span>
+                </div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Payment</span>
+                </div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Complete</span>
+                </div>
+            </div>
+
+             Step 1: User Details 
+            <div class="checkout-step" id="step1">
                 <div class="form-group">
                     <label>Email Address:</label>
                     <input type="email" id="email" placeholder="your@email.com" required>
+                    <small>We'll send your download link here</small>
                 </div>
                 <div class="form-group">
                     <label>Discord Username:</label>
                     <input type="text" id="discord" placeholder="username#1234" required>
+                    <small>For support and updates</small>
                 </div>
                 <div class="form-group">
                     <label>Roblox Username:</label>
                     <input type="text" id="roblox" placeholder="Your Roblox Username" required>
+                    <small>Required for cheat activation</small>
                 </div>
+                <button class="next-btn" onclick="nextStep()">Continue to Payment</button>
+            </div>
+
+             Step 2: Payment 
+            <div class="checkout-step hidden" id="step2">
                 <div class="payment-methods">
-                    <h3>Payment Method:</h3>
+                    <h3>Choose Payment Method:</h3>
                     <div class="payment-options">
                         <button class="payment-btn" onclick="selectPayment('crypto', event)">
-                            <span>₿</span>
-                            <span>Crypto</span>
+                            <span class="payment-icon">₿</span>
+                            <span class="payment-name">Crypto</span>
+                            <span class="payment-desc">Bitcoin, Ethereum</span>
                         </button>
                         <button class="payment-btn" onclick="selectPayment('paypal', event)">
-                            <span>💳</span>
-                            <span>PayPal</span>
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-name">PayPal</span>
+                            <span class="payment-desc">Secure & Fast</span>
                         </button>
                         <button class="payment-btn" onclick="selectPayment('card', event)">
-                            <span>💳</span>
-                            <span>Card</span>
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-name">Credit Card</span>
+                            <span class="payment-desc">Visa, Mastercard</span>
                         </button>
                     </div>
                 </div>
+                
                 <div class="price-summary">
                     <div class="price-row">
                         <span>Killem - Roblox External</span>
                         <span>£4.99</span>
+                    </div>
+                    <div class="price-row discount">
+                        <span>Discount (50% OFF)</span>
+                        <span>-£5.00</span>
                     </div>
                     <div class="price-row total">
                         <span>Total</span>
                         <span>£4.99</span>
                     </div>
                 </div>
-                <button class="purchase-btn" onclick="completePurchase()">Complete Purchase - £4.99</button>
+                
+                <div class="payment-buttons">
+                    <button class="back-btn" onclick="prevStep()">Back</button>
+                    <button class="purchase-btn" onclick="processPayment()">Complete Purchase - £4.99</button>
+                </div>
+            </div>
+
+             Step 3: Processing 
+            <div class="checkout-step hidden" id="step3">
+                <div class="processing-animation">
+                    <div class="spinner"></div>
+                    <h3>Processing Payment...</h3>
+                    <p>Please wait while we process your order</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Success Modal -->
+     Success Modal 
     <div id="successModal" class="modal">
         <div class="modal-content success-modal">
             <div class="success-icon">✓</div>
             <h2>Purchase Successful!</h2>
-            <p>Thank you for your purchase! You will receive download instructions via email within 5 minutes.</p>
-            <p><strong>Order ID:</strong> <span id="orderId"></span></p>
-            <p><strong>Product:</strong> Killem - Roblox External</p>
-            <button class="success-btn" onclick="closeSuccessModal()">Continue</button>
+            <p>Thank you for your purchase! Your order has been processed successfully.</p>
+            <div class="order-details">
+                <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                <p><strong>Product:</strong> Killem - Roblox External</p>
+                <p><strong>Email:</strong> <span id="orderEmail"></span></p>
+            </div>
+            <div class="download-section">
+                <h3>Download Your Cheat:</h3>
+                <button class="download-btn" onclick="downloadCheat()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7,10 12,15 17,10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Killem.exe
+                </button>
+                <p class="download-info">File size: 2.4 MB | Version: 1.0.3</p>
+            </div>
+            <div class="next-steps">
+                <h3>Next Steps:</h3>
+                <ol>
+                    <li>Download the file above</li>
+                    <li>Run as administrator</li>
+                    <li>Join our Discord for setup help</li>
+                    <li>Enjoy your enhanced gaming!</li>
+                </ol>
+            </div>
+            <div class="success-buttons">
+                <button class="discord-btn" onclick="joinDiscord()">Join Discord</button>
+                <button class="success-btn" onclick="closeSuccessModal()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+     Login Modal 
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to Imperium</h2>
+            <div class="login-form">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="loginPassword" placeholder="Your password">
+                </div>
+                <button class="login-submit-btn" onclick="performLogin()">Login</button>
+                <div class="login-links">
+                    <a href="#" onclick="showRegister()">Don't have an account? Register</a>
+                    <a href="#" onclick="showForgotPassword()">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     Status Modal 
+    <div id="statusModal" class="modal">
+        <div class="modal-content status-modal">
+            <span class="close" onclick="closeStatusModal()">&times;</span>
+            <h2>System Status</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-indicator online"></div>
+                    <div class="status-info">
+                        <h3>Website</h3>
+                        <p>Operational</p>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-indicator online"></div>
+                    <div class="status-info">
+                        <h3>Killem Cheat</h3>
+                        <p>Undetected</p>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-indicator online"></div>
+                    <div class="status-info">
+                        <h3>Discord Support</h3>
+                        <p>Online</p>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-indicator online"></div>
+                    <div class="status-info">
+                        <h3>Payment System</h3>
+                        <p>Operational</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Global variables
+        let currentStep = 1;
         let selectedPayment = '';
+        let cartItems = 0;
+
+        // Navigation functions
+        function goHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showHome() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            goHome();
+        }
+
+        function showProducts() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            scrollToProducts();
+        }
+
+        function showFeedback() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            alert('Feedback system coming soon! For now, please join our Discord to share feedback.');
+        }
+
+        function showStatus() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('statusModal').style.display = 'block';
+        }
 
         function scrollToProducts() {
             document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
@@ -215,28 +395,93 @@
         }
 
         function openAffiliates() {
-            alert('Affiliates program coming soon! Join our Discord for updates.');
+            alert('🎉 Affiliates Program!\n\nEarn 30% commission on every sale!\n\nJoin our Discord and contact @admin to get started.\n\nMinimum payout: £10\nPayment methods: PayPal, Crypto');
         }
 
         function openLogin() {
-            alert('Login system coming soon! For now, purchases are handled via email.');
+            document.getElementById('loginModal').style.display = 'block';
         }
 
         function openCart() {
-            alert('Shopping cart is empty. Click on Killem to purchase!');
+            if (cartItems === 0) {
+                alert('🛒 Your cart is empty!\n\nAdd Killem to your cart by clicking the arrow button on the product card.');
+            } else {
+                alert(`🛒 Cart Contents:\n\n• Killem - Roblox External (£4.99)\n\nTotal: £4.99\n\nClick "Continue to Payment" to checkout!`);
+            }
         }
 
-        function buyProduct(event) {
-            if (event) {
-                event.stopPropagation();
-            }
+        function closeBanner() {
+            document.querySelector('.top-banner').style.display = 'none';
+        }
+
+        // Product functions
+        function viewProduct() {
             document.getElementById('purchaseModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            document.getElementById('purchaseModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+        function addToCart(event) {
+            event.stopPropagation();
+            cartItems = 1;
+            document.getElementById('cartCount').textContent = cartItems;
+            document.getElementById('cartCount').style.display = 'block';
+            
+            // Show success message
+            const button = event.target.closest('.product-arrow');
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
+            button.style.background = '#10b981';
+            
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.style.background = '#e879f9';
+            }, 2000);
+            
+            alert('✅ Killem added to cart!\n\nClick the cart icon to view or proceed to checkout.');
+        }
+
+        // Checkout functions
+        function nextStep() {
+            const email = document.getElementById('email').value;
+            const discord = document.getElementById('discord').value;
+            const roblox = document.getElementById('roblox').value;
+            
+            if (!email || !discord || !roblox) {
+                alert('❌ Please fill in all fields to continue!');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('❌ Please enter a valid email address!');
+                return;
+            }
+            
+            currentStep = 2;
+            updateCheckoutStep();
+        }
+
+        function prevStep() {
+            currentStep = 1;
+            updateCheckoutStep();
+        }
+
+        function updateCheckoutStep() {
+            // Update step indicators
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active', 'completed');
+                const stepNum = parseInt(step.dataset.step);
+                if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                } else if (stepNum === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+            
+            // Show/hide step content
+            document.querySelectorAll('.checkout-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            document.getElementById(`step${currentStep}`).classList.remove('hidden');
         }
 
         function selectPayment(method, event) {
@@ -245,22 +490,23 @@
             event.currentTarget.classList.add('selected');
         }
 
-        function completePurchase() {
-            const email = document.getElementById('email').value;
-            const discord = document.getElementById('discord').value;
-            const roblox = document.getElementById('roblox').value;
-            
-            if (!email || !discord || !roblox) {
-                alert('Please fill in all fields!');
-                return;
-            }
-            
+        function processPayment() {
             if (!selectedPayment) {
-                alert('Please select a payment method!');
+                alert('❌ Please select a payment method!');
                 return;
             }
             
-            // Generate order ID
+            currentStep = 3;
+            updateCheckoutStep();
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                completeOrder();
+            }, 3000);
+        }
+
+        function completeOrder() {
+            const email = document.getElementById('email').value;
             const orderId = 'KLM-' + Math.random().toString(36).substr(2, 9).toUpperCase();
             
             // Close purchase modal
@@ -268,18 +514,44 @@
             
             // Show success modal
             document.getElementById('orderId').textContent = orderId;
+            document.getElementById('orderEmail').textContent = email;
             document.getElementById('successModal').style.display = 'block';
             
-            // Simulate sending data (in real app, this would go to your backend)
-            console.log('Purchase Data:', {
-                product: 'Killem - Roblox External',
-                email: email,
-                discord: discord,
-                roblox: roblox,
-                payment: selectedPayment,
-                price: '£4.99',
-                orderId: orderId
-            });
+            // Reset cart
+            cartItems = 0;
+            document.getElementById('cartCount').textContent = cartItems;
+            document.getElementById('cartCount').style.display = 'none';
+        }
+
+        function downloadCheat() {
+            // Create a fake file download
+            const element = document.createElement('a');
+            const file = new Blob(['This is a demo file for Killem Roblox External Cheat.\n\nIn a real implementation, this would be your actual cheat file.\n\nThank you for your purchase!'], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = 'Killem_v1.0.3.exe';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            alert('✅ Download started!\n\nFile: Killem_v1.0.3.exe\nSize: 2.4 MB\n\nCheck your downloads folder.');
+        }
+
+        function joinDiscord() {
+            window.open('https://discord.gg/imperium', '_blank');
+        }
+
+        // Modal functions
+        function closeModal() {
+            document.getElementById('purchaseModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset checkout
+            currentStep = 1;
+            selectedPayment = '';
+            document.querySelectorAll('.payment-btn').forEach(btn => btn.classList.remove('selected'));
+            document.querySelectorAll('.checkout-step').forEach(step => step.classList.add('hidden'));
+            document.getElementById('step1').classList.remove('hidden');
+            updateCheckoutStep();
         }
 
         function closeSuccessModal() {
@@ -290,33 +562,51 @@
             document.getElementById('email').value = '';
             document.getElementById('discord').value = '';
             document.getElementById('roblox').value = '';
-            selectedPayment = '';
-            document.querySelectorAll('.payment-btn').forEach(btn => btn.classList.remove('selected'));
         }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const purchaseModal = document.getElementById('purchaseModal');
-            const successModal = document.getElementById('successModal');
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function closeStatusModal() {
+            document.getElementById('statusModal').style.display = 'none';
+        }
+
+        function performLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
             
-            if (event.target == purchaseModal) {
-                closeModal();
+            if (!email || !password) {
+                alert('❌ Please fill in all fields!');
+                return;
             }
-            if (event.target == successModal) {
-                closeSuccessModal();
-            }
+            
+            alert('🔐 Login system is in development!\n\nFor now, all purchases are handled as guest checkout.\n\nJoin our Discord for account updates!');
+            closeLoginModal();
         }
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        function showRegister() {
+            alert('📝 Registration coming soon!\n\nFor now, you can purchase as a guest.\n\nJoin our Discord to stay updated on account features!');
+        }
+
+        function showForgotPassword() {
+            alert('🔑 Password reset coming soon!\n\nFor support, please join our Discord server.');
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = ['purchaseModal', 'successModal', 'loginModal', 'statusModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
                 }
             });
-        });
+        }
+
+        // Initialize cart count
+        document.getElementById('cartCount').style.display = 'none';
     </script>
 </body>
 </html>
