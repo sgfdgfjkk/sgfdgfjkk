@@ -4,8 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox External Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* Banner */
+        .payment-banner {
+            background: #ff28d9;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #141414;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a.active {
+            color: #fff;
+        }
+        .nav-buttons .btn {
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .nav-buttons .affiliate {
+            background: #ff28d9;
+            color: #fff;
+        }
+        .nav-buttons .login {
+            background: #1e1e1e;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+        .search-box {
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+        .hero-buttons {
+            margin-top: 20px;
+        }
+        .btn.primary {
+            background: #ff28d9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        .btn.secondary {
+            background: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Store Section */
+        .store {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .store h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .store-desc {
+            color: #bbb;
+            margin-bottom: 40px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: left;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            margin-top: 12px;
+            font-size: 1.1rem;
+        }
+        .product-card p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #00d17a;
+            color: #000;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        .badge.new {
+            background: #ff28d9;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Payment Banner -->
