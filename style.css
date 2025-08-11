@@ -1,33 +1,36 @@
-/* Global Styles */
-body {
+/* General Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
     font-family: 'Inter', sans-serif;
-    background-color: #0a0a0a;
-    color: white;
+    background-color: #0f0f0f;
+    color: #fff;
+    line-height: 1.5;
 }
 
-/* Payment Banner */
+/* Banner */
 .payment-banner {
     background: #ff28d9;
     text-align: center;
-    padding: 4px 0;
-}
-.payment-banner a {
-    color: #bfffe3;
-    text-decoration: none;
+    padding: 6px 0;
     font-size: 14px;
+    font-weight: 500;
 }
 
-/* Header */
+/* Navbar */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #000000, #1a1a1a);
-    padding: 10px 30px;
+    padding: 15px 5%;
+    background-color: #141414;
 }
-header .logo img {
-    height: 30px;
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 nav a {
     margin: 0 15px;
@@ -36,38 +39,32 @@ nav a {
     font-weight: 500;
 }
 nav a.active {
-    color: white;
+    color: #fff;
 }
 .nav-buttons .btn {
     padding: 8px 14px;
     border-radius: 20px;
     font-weight: 600;
     text-decoration: none;
+    margin-left: 10px;
 }
 .nav-buttons .affiliate {
     background: #ff28d9;
-    color: white;
+    color: #fff;
 }
 .nav-buttons .login {
-    background: #1a1a1a;
-    color: white;
-}
-.nav-buttons .cart {
-    margin-left: 10px;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
+    background: #1e1e1e;
+    color: #fff;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: 10px;
-    font-weight: 700;
 }
 .hero p {
     color: #aaa;
@@ -83,11 +80,12 @@ nav a.active {
     border-radius: 8px;
     border: none;
     font-size: 1rem;
+    outline: none;
 }
 .hero-buttons {
     margin-top: 20px;
 }
-.btn.shop {
+.btn.primary {
     background: #ff28d9;
     padding: 10px 20px;
     border-radius: 20px;
@@ -96,7 +94,7 @@ nav a.active {
     font-weight: 600;
     margin-right: 10px;
 }
-.btn.support {
+.btn.secondary {
     background: #1a1a1a;
     padding: 10px 20px;
     border-radius: 20px;
@@ -105,48 +103,59 @@ nav a.active {
     font-weight: 600;
 }
 
-/* Store */
+/* Store Section */
 .store {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
-.tagline {
-    color: #ff28d9;
-    font-weight: 600;
+.store h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 .store-desc {
     color: #bbb;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .products {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
 }
 .product-card {
     background: #1a1a1a;
     border-radius: 12px;
     padding: 15px;
-    max-width: 200px;
+    text-align: left;
     position: relative;
+    transition: transform 0.2s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
 }
 .product-card img {
     width: 100%;
     border-radius: 8px;
 }
 .product-card h3 {
-    margin-top: 10px;
-    font-weight: 700;
+    margin-top: 12px;
+    font-size: 1.1rem;
+}
+.product-card p {
+    font-size: 0.9rem;
+    color: #aaa;
 }
 .badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 12px;
+    left: 12px;
     background: #00d17a;
-    color: black;
+    color: #000;
     font-size: 12px;
     font-weight: 600;
     padding: 4px 8px;
     border-radius: 6px;
+}
+.badge.new {
+    background: #ff28d9;
+    color: white;
 }
