@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox External Store</title>
+    <title>KILLEM External Roblox</title>
     <style>
         /* General Reset */
         * {
@@ -35,9 +35,9 @@
             padding: 15px 5%;
             background-color: #141414;
         }
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .logo img {
+            height: 40px;
+            width: auto;
         }
         nav a {
             margin: 0 15px;
@@ -124,9 +124,8 @@
             margin-bottom: 40px;
         }
         .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
         }
         .product-card {
             background: #1a1a1a;
@@ -135,6 +134,7 @@
             text-align: left;
             position: relative;
             transition: transform 0.2s ease;
+            max-width: 300px;
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -145,26 +145,22 @@
         }
         .product-card h3 {
             margin-top: 12px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         .product-card p {
             font-size: 0.9rem;
             color: #aaa;
         }
-        .badge {
+        .badge.new {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: #00d17a;
-            color: #000;
+            background: #ff28d9;
+            color: white;
             font-size: 12px;
             font-weight: 600;
             padding: 4px 8px;
             border-radius: 6px;
-        }
-        .badge.new {
-            background: #ff28d9;
-            color: white;
         }
     </style>
 </head>
@@ -176,7 +172,9 @@
 
     <!-- Navbar -->
     <header>
-        <div class="logo">RBLX External</div>
+        <div class="logo">
+            <img src="killem.png" alt="KILLEM Logo">
+        </div>
         <nav>
             <a href="#" class="active">Home</a>
             <a href="#">Products</a>
@@ -191,43 +189,27 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Boost Your Roblox Experience</h1>
-        <p>Providing the best external tools and utilities for Roblox players.</p>
+        <h1>KILLEM External Roblox</h1>
+        <p>Powerful, clean, and efficient Roblox external for advanced players.</p>
         <div class="search-box">
-            <input type="text" placeholder="Search for products...">
+            <input type="text" placeholder="Search for features...">
         </div>
         <div class="hero-buttons">
-            <a href="#" class="btn primary">Shop Now</a>
+            <a href="#" class="btn primary">Download</a>
             <a href="#" class="btn secondary">Support</a>
         </div>
     </section>
 
     <!-- Store Section -->
     <section class="store">
-        <h2>Store</h2>
-        <p class="store-desc">Our latest and most popular Roblox externals</p>
+        <h2>Featured</h2>
+        <p class="store-desc">Our latest Roblox external tool</p>
         <div class="products">
             <div class="product-card">
-                <span class="badge">Best Seller</span>
-                <img src="vector.png" alt="Vector">
-                <h3>VECTOR</h3>
-                <p>High-performance Roblox tool with advanced features.</p>
-            </div>
-            <div class="product-card">
-                <img src="farsaken.png" alt="Farsaken">
-                <h3>FARSAKEN</h3>
-                <p>Optimized for speed and reliability.</p>
-            </div>
-            <div class="product-card">
-                <img src="shadow.png" alt="Shadow">
-                <h3>SHADOW</h3>
-                <p>Lightweight and easy to use external.</p>
-            </div>
-            <div class="product-card">
                 <span class="badge new">New</span>
-                <img src="killem.png" alt="Killem">
-                <h3>KILLEM</h3>
-                <p>Powerful and clean modding tool for Roblox.</p>
+                <img src="killem.png" alt="KILLEM External">
+                <h3>KILLEM External Roblox</h3>
+                <p>All-in-one Roblox external with advanced mods, clean UI, and high performance.</p>
             </div>
         </div>
     </section>
