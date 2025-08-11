@@ -3,233 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperium - Premium Cheats</title>
+    <title>Digital Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">IMPERIUM</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
-                <a href="#" class="login-btn">Login</a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Premium Gaming Cheats</h1>
-                <p>Undetected • Secure • Professional</p>
-                <div class="status">
-                    <span class="status-dot"></span>
-                    All systems operational
-                </div>
-            </div>
-        </section>
-
-        <section class="products" id="products">
-            <div class="container">
-                <h2>Our Products</h2>
-                
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>Valorant Cheat</h3>
-                            <div class="stock in-stock">
-                                <span class="stock-dot"></span>
-                                In Stock
-                            </div>
-                        </div>
-                        <div class="features">
-                            <div class="feature">✓ Aimbot</div>
-                            <div class="feature">✓ ESP/Wallhack</div>
-                            <div class="feature">✓ Triggerbot</div>
-                            <div class="feature">✓ No Recoil</div>
-                        </div>
-                        <div class="price">$25/month</div>
-                        <button class="buy-btn" onclick="purchase('valorant')">Buy Now</button>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>CS2 Cheat</h3>
-                            <div class="stock in-stock">
-                                <span class="stock-dot"></span>
-                                In Stock
-                            </div>
-                        </div>
-                        <div class="features">
-                            <div class="feature">✓ Aimbot</div>
-                            <div class="feature">✓ ESP/Wallhack</div>
-                            <div class="feature">✓ Bhop</div>
-                            <div class="feature">✓ Skin Changer</div>
-                        </div>
-                        <div class="price">$30/month</div>
-                        <button class="buy-btn" onclick="purchase('cs2')">Buy Now</button>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>Apex Legends</h3>
-                            <div class="stock out-stock">
-                                <span class="stock-dot"></span>
-                                Out of Stock
-                            </div>
-                        </div>
-                        <div class="features">
-                            <div class="feature">✓ Aimbot</div>
-                            <div class="feature">✓ ESP/Wallhack</div>
-                            <div class="feature">✓ No Recoil</div>
-                            <div class="feature">✓ Speed Hack</div>
-                        </div>
-                        <div class="price">$35/month</div>
-                        <button class="buy-btn disabled" disabled>Out of Stock</button>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>Fortnite Cheat</h3>
-                            <div class="stock low-stock">
-                                <span class="stock-dot"></span>
-                                Low Stock (3 left)
-                            </div>
-                        </div>
-                        <div class="features">
-                            <div class="feature">✓ Aimbot</div>
-                            <div class="feature">✓ ESP/Wallhack</div>
-                            <div class="feature">✓ Silent Aim</div>
-                            <div class="feature">✓ No Spread</div>
-                        </div>
-                        <div class="price">$40/month</div>
-                        <button class="buy-btn" onclick="purchase('fortnite')">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2>Contact & Support</h2>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <h3>Discord</h3>
-                        <p>Join our Discord for support</p>
-                        <a href="#" class="contact-link">discord.gg/imperium</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p>Contact us directly</p>
-                        <a href="#" class="contact-link">support@imperium.gg</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Status</h3>
-                        <p>Check system status</p>
-                        <a href="#" class="contact-link">status.imperium.gg</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Imperium. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Refunds</a>
-            </div>
-        </div>
-    </footer>
-
-     Purchase Modal 
-    <div id="purchaseModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Purchase <span id="productName"></span></h2>
-            <div class="purchase-form">
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" id="email" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Discord Username:</label>
-                    <input type="text" id="discord" placeholder="username#1234" required>
-                </div>
-                <div class="payment-methods">
-                    <h3>Payment Method:</h3>
-                    <div class="payment-options">
-                        <button class="payment-btn" onclick="selectPayment('crypto')">
-                            <span>💰</span> Crypto
-                        </button>
-                        <button class="payment-btn" onclick="selectPayment('paypal')">
-                            <span>💳</span> PayPal
-                        </button>
-                        <button class="payment-btn" onclick="selectPayment('card')">
-                            <span>💳</span> Card
-                        </button>
-                    </div>
-                </div>
-                <button class="purchase-btn" onclick="completePurchase()">Complete Purchase</button>
-            </div>
-        </div>
+    <!-- Top Payment Banner -->
+    <div class="payment-banner">
+        <a href="#">💳 Secure and Encrypted Payments</a>
     </div>
 
-    <script>
-        let currentProduct = '';
-        let selectedPayment = '';
+    <!-- Navigation -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Feedback</a>
+            <a href="#">Status</a>
+        </nav>
+        <div class="nav-buttons">
+            <a href="#" class="btn affiliate">Affiliates</a>
+            <a href="#" class="btn login">Login</a>
+            <a href="#" class="cart">🛒</a>
+        </div>
+    </header>
 
-        function purchase(product) {
-            currentProduct = product;
-            document.getElementById('productName').textContent = product.toUpperCase();
-            document.getElementById('purchaseModal').style.display = 'block';
-        }
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>help you get ahead!</h1>
+        <p>Providing the best digital products and software for individuals</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search for products...">
+        </div>
+        <div class="hero-buttons">
+            <a href="#" class="btn shop">Shop Now</a>
+            <a href="#" class="btn support">Support</a>
+        </div>
+    </section>
 
-        function selectPayment(method) {
-            selectedPayment = method;
-            document.querySelectorAll('.payment-btn').forEach(btn => btn.classList.remove('selected'));
-            event.target.closest('.payment-btn').classList.add('selected');
-        }
-
-        function completePurchase() {
-            const email = document.getElementById('email').value;
-            const discord = document.getElementById('discord').value;
-            
-            if (!email || !discord || !selectedPayment) {
-                alert('Please fill all fields and select payment method');
-                return;
-            }
-            
-            alert(`Purchase initiated for ${currentProduct.toUpperCase()}\nEmail: ${email}\nDiscord: ${discord}\nPayment: ${selectedPayment}\n\nYou will receive instructions via email.`);
-            document.getElementById('purchaseModal').style.display = 'none';
-        }
-
-        // Close modal
-        document.querySelector('.close').onclick = function() {
-            document.getElementById('purchaseModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('purchaseModal')) {
-                document.getElementById('purchaseModal').style.display = 'none';
-            }
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <!-- Store Section -->
+    <section class="store">
+        <p class="tagline">Elevate Your Experience ✨</p>
+        <h2>Store</h2>
+        <p class="store-desc">Browse our curated selection and offers, covering everything you need.</p>
+        <div class="products">
+            <div class="product-card">
+                <span class="badge">Best Seller</span>
+                <img src="vector.png" alt="Vector">
+                <h3>VECTOR</h3>
+            </div>
+            <div class="product-card">
+                <img src="farsaken.png" alt="Farsaken">
+                <h3>FARSAKEN</h3>
+            </div>
+            <div class="product-card">
+                <img src="shadow.png" alt="Shadow">
+                <h3>SHADOW</h3>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
