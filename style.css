@@ -242,7 +242,7 @@ body {
   position: relative;
   cursor: pointer; /* Still cursor pointer for visual consistency with screenshot */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 300px; /* Adjusted width to fit 3 in a row */
+  width: 400px; /* Adjusted width to match screenshot's single card */
 }
 
 .product-card:hover {
@@ -275,16 +275,8 @@ body {
   overflow: hidden;
 }
 
-.vector-bg {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); /* Purple gradient */
-}
-
-.fartsaken-bg {
-  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); /* Slightly different purple */
-}
-
-.shadow-bg {
-  background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%); /* Another purple gradient */
+.killem-bg {
+  background: linear-gradient(135deg, #dc2626 0%, #7c2d12 50%, #991b1b 100%); /* Red gradient from previous Killem */
 }
 
 .product-logo {
@@ -295,13 +287,19 @@ body {
   z-index: 2;
 }
 
-.vector-logo svg,
-.fartsaken-logo svg,
-.shadow-logo svg {
+.killem-logo {
+  background: rgba(255, 255, 255, 0.1);
   width: 80px;
   height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
   color: #ffffff;
-  opacity: 0.8;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .product-title-overlay {
