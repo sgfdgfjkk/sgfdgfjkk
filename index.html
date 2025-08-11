@@ -1,245 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imperium Services</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Imperium Services Discord</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Pink Banner -->
-  <div class="top-banner">
-      <span class="banner-text">Need help? Join our Discord server!</span>
-      <button class="banner-close" onclick="closeBanner()">&times;</button>
-  </div>
+    <div class="background-gradient">
+        <div class="discord-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Discord</span>
+        </div>
+        <div class="card-container">
+            <div class="invite-card">
+                <div class="invite-header">
+                    <img src="/placeholder.svg?height=64&width=64" alt="User Avatar" class="avatar">
+                    <p class="invite-text">jay (damperflea) invited you to join</p>
+                    <h1 class="server-name">killem best free cheat</h1>
+                    <div class="server-status">
+                        <span class="online-status">
+                            <span class="dot online"></span> 15 Online
+                        </span>
+                        <span class="members-status">
+                            <span class="dot members"></span> 240 Members
+                        </span>
+                    </div>
+                </div>
+                <div class="invite-form">
+                    <div class="form-group">
+                        <label for="displayName">Display Name</label>
+                        <input type="text" id="displayName" placeholder="What should everyone call you?">
+                        <p class="form-hint">This is how others see you. You can use special characters and emoji.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <div class="dob-selects">
+                            <select id="month">
+                                <option value="">Month</option>
+                                <!-- Options will be populated by JS -->
+                            </select>
+                            <select id="day">
+                                <option value="">Day</option>
+                                <!-- Options will be populated by JS -->
+                            </select>
+                            <select id="year">
+                                <option value="">Year</option>
+                                <!-- Options will be populated by JS -->
+                            </select>
+                        </div>
+                    </div>
+                    <p class="terms-text">
+                        By clicking "Create Account," you agree to Discord's 
+                        <a href="https://discord.com/terms" target="_blank">Terms of Service</a> 
+                        and have read the <a href="https://discord.com/privacy" target="_blank">Privacy Policy</a>
+                    </p>
+                    <button class="create-account-btn" onclick="joinDiscord()">Create Account</button>
+                    <p class="login-link">
+                        Already have an account? <a href="#" onclick="showLoginPlaceholder()">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-      <div class="nav-container">
-          <!-- Logo -->
-          <div class="logo" onclick="goHome()">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <path d="M20 4L32 12L20 20L8 12L20 4Z" fill="#e879f9"/>
-                  <path d="M8 16L20 24L32 16L20 24L8 16Z" fill="#c084fc"/>
-                  <path d="M8 24L20 32L32 24L20 32L8 24Z" fill="#a855f7"/>
-              </svg>
-          </div>
+    <script>
+        // Populate Date of Birth dropdowns
+        function populateDOB() {
+            const monthSelect = document.getElementById('month');
+            const daySelect = document.getElementById('day');
+            const yearSelect = document.getElementById('year');
 
-          <!-- Navigation Links -->
-          <div class="nav-links">
-              <a href="#" class="nav-link active" onclick="showHome()">Home</a>
-              <a href="#" class="nav-link" onclick="showProductsPlaceholder()">Products</a>
-              <a href="#" class="nav-link" onclick="showFeedback()">Feedback</a>
-              <a href="#" class="nav-link" onclick="showStatus()">Status</a>
-          </div>
+            // Months
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            months.forEach((month, index) => {
+                const option = document.createElement('option');
+                option.value = (index + 1).toString();
+                option.textContent = month;
+                monthSelect.appendChild(option);
+            });
 
-          <!-- Right Side Actions -->
-          <div class="nav-actions">
-              <button class="affiliates-btn" onclick="openAffiliates()">Affiliates</button>
-              <button class="login-btn" onclick="openLoginPlaceholder()">Login</button>
-              <button class="cart-btn" onclick="openCartPlaceholder()">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="9" cy="21" r="1"/>
-                      <circle cx="20" cy="21" r="1"/>
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                  </svg>
-              </button>
-          </div>
-      </div>
-  </nav>
+            // Days
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement('option');
+                option.value = i.toString();
+                option.textContent = i.toString();
+                daySelect.appendChild(option);
+            }
 
-  <!-- Main Content -->
-  <main class="main-content">
-      <!-- Action Buttons -->
-      <div class="action-buttons">
-          <button class="download-now-btn" onclick="downloadCheat()">
-              <span>Download Now</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7,10 12,15 17,10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-          </button>
-          <button class="support-btn" onclick="openSupport()">
-              <span>Support</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-              </svg>
-          </button>
-      </div>
+            // Years (e.g., last 100 years)
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i >= currentYear - 100; i--) {
+                const option = document.createElement('option');
+                option.value = i.toString();
+                option.textContent = i.toString();
+                yearSelect.appendChild(option);
+            }
+        }
 
-      <!-- Elevate Badge -->
-      <div class="elevate-badge">
-          <span>Elevate Your Experience ✨</span>
-      </div>
+        document.addEventListener('DOMContentLoaded', populateDOB);
 
-      <!-- Store Section (Visual only, no interaction) -->
-      <section class="store-section" id="products">
-          <h1 class="store-title">Store</h1>
-          <p class="store-subtitle">
-              Browse our curated selection and offers, covering<br>
-              everything you need.
-          </p>
+        // Function to handle "Create Account" button click
+        function joinDiscord() {
+            const displayName = document.getElementById('displayName').value;
+            const month = document.getElementById('month').value;
+            const day = document.getElementById('day').value;
+            const year = document.getElementById('year').value;
 
-          <!-- Products Grid (Static display) -->
-          <div class="products-grid">
-              <!-- Killem Product -->
-              <div class="product-card" onclick="downloadCheat()">
-                  <div class="best-seller-badge">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <circle cx="12" cy="12" r="3"/>
-                          <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-                      </svg>
-                      Best Seller
-                  </div>
-                  <div class="product-image killem-bg">
-                      <div class="product-logo killem-logo">
-                          <span>K</span>
-                      </div>
-                      <div class="product-title-overlay">KILLEM</div>
-                      <div class="product-badges">
-                          <span class="badge external">External</span>
-                          <span class="badge roblox">Roblox</span>
-                      </div>
-                  </div>
-                  <div class="product-info">
-                      <h3 class="product-name">Killem</h3>
-                      <div class="product-status in-stock">In Stock</div>
-                      <div class="product-pricing">
-                          <span class="price-label">Price</span>
-                          <span class="price-range">£4.99</span>
-                          <span class="price-original">£9.99</span>
-                      </div>
-                  </div>
-                  <button class="product-arrow" onclick="downloadCheat()">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 18l6-6-6-6"/>
-                      </svg>
-                  </button>
-              </div>
-          </div>
-      </section>
-  </main>
+            if (!displayName || !month || !day || !year) {
+                alert('Please fill in all fields to create an account.');
+                return;
+            }
 
-  <!-- Status Modal -->
-  <div id="statusModal" class="modal">
-      <div class="modal-content status-modal">
-          <span class="close" onclick="closeStatusModal()">&times;</span>
-          <h2>System Status</h2>
-          <div class="status-grid">
-              <div class="status-item">
-                  <div class="status-indicator online"></div>
-                  <div class="status-info">
-                      <h3>Website</h3>
-                      <p>Operational</p>
-                  </div>
-              </div>
-              <div class="status-item">
-                  <div class="status-indicator online"></div>
-                  <div class="status-info">
-                      <h3>Killem Cheat</h3>
-                      <p>Undetected</p>
-                  </div>
-              </div>
-              <div class="status-item">
-                  <div class="status-indicator online"></div>
-                  <div class="status-info">
-                      <h3>Discord Support</h3>
-                      <p>Online</p>
-                  </div>
-              </div>
-              <div class="status-item">
-                  <div class="status-indicator online"></div>
-                  <div class="status-info">
-                      <h3>Download System</h3>
-                      <p>Operational</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+            // Redirect to the Discord invite link
+            window.open('https://discord.gg/JN3dCqAW', '_blank');
 
-  <script>
-      // Navigation functions
-      function goHome() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+            // Simulate the download after joining Discord
+            downloadCheat();
+        }
 
-      function showHome() {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          event.target.classList.add('active');
-          goHome();
-      }
+        // Function to handle "Log in" link click
+        function showLoginPlaceholder() {
+            alert('Login functionality is not implemented in this demo. Please create a new account or join Discord directly.');
+        }
 
-      function showProductsPlaceholder() {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          event.target.classList.add('active');
-          alert('This is a static display. Please use the "Download Now" button for the main action!');
-      }
+        // Simulated Download Function
+        function downloadCheat() {
+            // IMPORTANT: This is a simulated download.
+            // Directly downloading your specific .exe file from the Gofile.io *page* (https://gofile.io/d/iN6bZP)
+            // is NOT possible from client-side JavaScript due to browser security (CORS) and the fact that
+            // the URL points to an HTML page, not the direct file.
+            // To download your actual file, you would need a backend server to act as a proxy.
 
-      function showFeedback() {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          event.target.classList.add('active');
-          alert('Feedback system coming soon! For now, please join our Discord to share feedback.');
-      }
-
-      function showStatus() {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          event.target.classList.add('active');
-          document.getElementById('statusModal').style.display = 'block';
-      }
-
-      function openSupport() {
-          window.open('https://discord.gg/imperium', '_blank');
-      }
-
-      function openAffiliates() {
-          alert('🎉 Affiliates Program!\n\nEarn 30% commission on every sale!\n\nJoin our Discord and contact @admin to get started.\n\nMinimum payout: £10\nPayment methods: PayPal, Crypto');
-      }
-
-      function openLoginPlaceholder() {
-          alert('🔐 Login and registration are not available on this version. This is a direct download site.');
-      }
-
-      function openCartPlaceholder() {
-          alert('🛒 Shopping cart is not available on this version. Please use the "Download Now" button.');
-      }
-
-      function closeBanner() {
-          document.querySelector('.top-banner').style.display = 'none';
-      }
-
-      // Download function
-      function downloadCheat() {
-          // Simulate a file download.
-          // For a real download from an external URL like Gofile.io, you would typically need a backend proxy
-          // to handle the download due to CORS restrictions and to prevent exposing the direct download link.
-          // This example creates a dummy text file for demonstration.
-          const element = document.createElement('a');
-          const fileContent = 'This is a demo file for your cheat download.\n\nIn a real scenario, this would be the actual executable or archive from Gofile.io.\n\nThank you for using Imperium Services!';
-          const file = new Blob([fileContent], {type: 'text/plain'});
-          element.href = URL.createObjectURL(file);
-          element.download = 'Imperium_Cheat_v1.0.0.exe'; // Name of the downloaded file
-          document.body.appendChild(element);
-          element.click();
-          document.body.removeChild(element);
-          
-          alert('✅ Download started!\n\nFile: Imperium_Cheat_v1.0.0.exe\nSize: ~2.5 MB\n\nCheck your downloads folder.');
-      }
-
-      // Modal functions
-      function closeStatusModal() {
-          document.getElementById('statusModal').style.display = 'none';
-      }
-
-      // Close modals when clicking outside
-      window.onclick = function(event) {
-          const statusModal = document.getElementById('statusModal');
-          if (event.target == statusModal) {
-              closeStatusModal();
-          }
-      }
-  </script>
+            const element = document.createElement('a');
+            const fileContent = 'This is a demo executable file.\n\nIn a real application, this would be your actual cheat file downloaded via a backend proxy.\n\nThank you for using Imperium Services!';
+            const file = new Blob([fileContent], {type: 'application/octet-stream'}); // Use octet-stream for executable
+            element.href = URL.createObjectURL(file);
+            element.download = 'Imperium_Cheat_v1.0.0.exe'; // Name of the downloaded file
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            alert('✅ Download started!\n\nFile: Imperium_Cheat_v1.0.0.exe\nSize: ~2.5 MB\n\nCheck your downloads folder.');
+        }
+    </script>
 </body>
 </html>
